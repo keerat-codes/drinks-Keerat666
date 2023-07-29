@@ -8,6 +8,8 @@ require('dotenv').config();
 
 app.use(cors())
 app.use(express.json());
+const coolDrinksRoute = require('./routes/coolDrinks');
+app.use('/coolDrinks', coolDrinksRoute);
 app.use(express.urlencoded({ extended: false }));
 
 const conn = require('./middlewares/connection');
